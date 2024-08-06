@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const images = ['9.jpeg', '10.jpeg','11.jpeg', '12.jpeg','22.jpeg','23.jpeg'];
+const images = ['9.jpeg', '10.jpeg','11.jpeg', '12.jpeg','23.jpeg',];
 
 const CarouselContainer = styled.div`
   width: 100%;
