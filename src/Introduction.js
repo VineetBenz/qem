@@ -65,10 +65,7 @@ const Introduction = () => {
         <div style={styles.content}>
           <h2 style={styles.heading}>Welcome to our QEM</h2>
           <p style={styles.paragraph}>
-            At the outset we would like to introduce ourself as a professionally managed company 
-            in the business of stone mining, crushing and supply of aggregates and coarse sand 
-            to Delhi-NCR to the companies like Larsen and Toubro, Sadbhav Engineering, DLF, LOR, 
-            B L Kashyap, DRA, PIL, C P Arora, ERA construction, HCC, etc. for last many years.
+          Quality Earth Minerals (QEM) was incorporated in 2008 under Companies Act 1956 as a private limited entity and has been engaged in stone mining and processing ownership based mining leases mainly for various construction companies. It is also involved in infrastructure development activities in Delhi-NCR. QEM is a mining and crushing company in private sector has reached the production of substantialquantity of 7,00,000 Metric Tonnes till March 2024. Projection of approx 15,00,0000 Metric Tonnes for the year ended March 2025.
           </p>
         </div>
       </div>

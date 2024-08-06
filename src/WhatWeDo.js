@@ -29,6 +29,7 @@ const styles = {
     display: 'flex',
     height: '70vh',
     
+    
     backgroundColor: 'rgba(1, 1, 0, 0.09)',
     justifyContent: 'space-between',
     alignItems: 'center',
