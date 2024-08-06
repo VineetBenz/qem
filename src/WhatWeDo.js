@@ -12,7 +12,7 @@ const WhatWeDo = () => {
         One of the Leaders in stone mining and associated minerals processing with end to end solutions including logistics with almost100% vendor share in many infrastructure companies. Pioneers in introducing new technologies for eco-friendly infrastructure construction and mining.<br/>
         Large fleet of Heavy Earth Moving Machineries and trucks/tippers maintained in-house through own workshops.Rich experience of promoters in construction and stone industrywith sound financial track record backed up by a core team oftechnical and financial personnel with proven track record.
         </p>
-        <button style={styles.projectButton}>Tell us about your project &gt;</button>
+        <button style={styles.projectButton}>Read More &gt;</button>
       </div>
       <div style={styles.imagesSection}>
         <div style={styles.imageWrapper}>
