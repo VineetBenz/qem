@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const teamMembers = [
-  { name: 'Alex Johnson', position: 'CEO', bio: 'Alex has over 20 years of experience in the industry.', photo: 'logo.png' },
-  { name: 'Sam Taylor', position: 'VP Growth & Development', bio: 'Sam leads our expansion efforts across new markets.', photo: 'logo.png' },
-  { name: 'Jordan Lee', position: 'VP Finance & Operations', bio: 'Jordan oversees all financial and operational aspects of our company.', photo: 'logo.png' },
-  { name: 'Casey Morgan', position: 'VP Strategy', bio: 'Casey develops our long-term strategic initiatives.', photo: 'logo.png' },
-  { name: 'Riley Parker', position: 'VP Sales & Marketing', bio: 'Riley drives our sales growth and marketing campaigns.', photo: 'logo.png' },
-  { name: 'Quinn Davis', position: 'Creative Director', bio: 'Quinn brings innovative design solutions to all our projects.', photo: 'logo.png' },
-  { name: 'Avery Wilson', position: 'Sr. Account Executive', bio: 'Avery manages relationships with our key clients.', photo: 'logo.png' },
-  { name: 'Drew Thompson', position: 'Founding Partner', bio: 'Drew co-founded our company and guides our overall vision.', photo: 'logo.png' },
-  { name: 'Taylor Reed', position: 'Founding Partner', bio: 'Taylor co-founded our company and leads our technological innovations.', photo: 'logo.png' },
+  { name: 'Alex Johnson', position: 'CEO', bio: 'Alex has over 20 years of experience in the industry.', photo: 'avatar1.jpeg' },
+  { name: 'Sam Taylor', position: 'VP Growth & Development', bio: 'Sam leads our expansion efforts across new markets.', photo: 'avatar2.jpeg' },
+  { name: 'Jordan Lee', position: 'VP Finance & Operations', bio: 'Jordan oversees all financial and operational aspects of our company.', photo: 'avatar3.jpeg' },
+  { name: 'Casey Morgan', position: 'VP Strategy', bio: 'Casey develops our long-term strategic initiatives.', photo: 'avatar1.jpeg' },
+  { name: 'Riley Parker', position: 'VP Sales & Marketing', bio: 'Riley drives our sales growth and marketing campaigns.', photo: 'avatar2.jpeg' },
+  { name: 'Quinn Davis', position: 'Creative Director', bio: 'Quinn brings innovative design solutions to all our projects.', photo: 'avatar3.jpeg' },
+  { name: 'Avery Wilson', position: 'Sr. Account Executive', bio: 'Avery manages relationships with our key clients.', photo: 'avatar1.jpeg' },
+  { name: 'Drew Thompson', position: 'Founding Partner', bio: 'Drew co-founded our company and guides our overall vision.', photo: 'avatar2.jpeg' },
+  { name: 'Taylor Reed', position: 'Founding Partner', bio: 'Taylor co-founded our company and leads our technological innovations.', photo: 'avatar3.jpeg' },
 ];
 
 const TeamGrid = () => {

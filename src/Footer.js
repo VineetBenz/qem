@@ -82,7 +82,7 @@ const Image = styled.img`
   width: 220px;
   height: 120px;
   object-fit: cover;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
   border-radius: 5px;
 `;
 
@@ -144,6 +144,8 @@ const Footer = () => {
         <ImageSection>
           <Image src="g20.jpeg" alt="G20" />
           <Image src="aam.jpeg" alt="AAM" />
+          <Image src="bbbp.jpeg" alt="G20" />
+          <Image src="ci.jpeg" alt="AAM" />
         </ImageSection>
       </FooterContent>
       <Copyright>

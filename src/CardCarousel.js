@@ -3,15 +3,16 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const cards = [
-  { name: '3Logistics', image: '6.jpeg' },
-  { name: '5Indistrial parks', image: '6.jpeg' },
-  { name: '2Mineral Processing', image: '6.jpeg' },
-  { name: '4Infrastructure', image: '6.jpeg' },
-  { name: '1Minning Estate', image: '6.jpeg' },
+  { name: 'Minning Estate', image: '6.jpeg' },
+  { name: 'Mineral Processing', image: '6.jpeg' },
+  { name: 'Logistics', image: '6.jpeg' },
+  { name: 'Infrastructure', image: '6.jpeg' },
+  { name: 'Indistrial parks', image: '6.jpeg' },
 ];
 
 const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -19,11 +20,16 @@ const CardCarousel = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 5000);
+      if (currentIndex >= cards.length - 1) {
+        setDirection(-1);
+      } else if (currentIndex <= 0) {
+        setDirection(1);
+      }
+      setCurrentIndex((prevIndex) => prevIndex + direction);
+    }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentIndex, direction]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -47,12 +53,12 @@ const CardCarousel = () => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <h3 className="section-title"> Verticals</h3>
+      <h3 className="section-title">Our Verticals</h3>
       <div className="carousel">
         <motion.div
           className="carousel-inner"
-          animate={{ x: `-${currentIndex * (100 / cards.length)}%` }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          animate={{ x: `${currentIndex * (direction === 1 ? -20 / cards.length : 30 / cards.length)}%` }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
         >
           {cards.map((card, index) => (
             <motion.div
