@@ -26,19 +26,20 @@ const HeaderContent = styled.div`
 const LogoContainer = styled(motion.div)`
   display: flex;
   align-items: center;
+  h
 `;
 
 const Logo = styled.img`
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
 `;
 
 const CompanyName = styled(motion.h1)`
   color: #333;
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -60,6 +61,7 @@ const NavItem = styled(motion.li)`
   }
 `;
 
+
 const NavLink = styled(Link)`
   text-decoration: none;
   color: #333;
@@ -68,13 +70,31 @@ const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
+  position: relative;
+  
   &:hover {
     color: #f39c12;
     text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
   }
+  
   svg {
     margin-right: 8px;
     font-size: 1.6rem;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f39c12;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
   }
 `;
 

@@ -12,14 +12,14 @@ const BoardOfDirectors = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    const randomDirectors = getRandomDirectors(6);
+    const randomDirectors = getRandomDirectors(8);
     setDirectors(randomDirectors);
   }, []);
 
   return (
     <BoardWrapper>
       <Content>
-        <Title data-aos="fade-down">Board of Directors</Title>
+        <Title data-aos="fade-down">Our Teams</Title>
         <CardContainer>
           {directors.map((director, index) => (
             <DirectorCard
@@ -100,7 +100,7 @@ const getRandomDirectors = (count) => {
       bio: 'Michael Chen is a visionary leader who has successfully led multiple startups to acquisition.',
     },
     {
-      name: 'Sophia Rodriguez',
+      name: 'Vinit Maharia',
       position: 'CFO',
       avatar: 'logo.png',
       bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
@@ -110,6 +110,49 @@ const getRandomDirectors = (count) => {
       position: 'CTO',
       avatar: 'logo.png',
       bio: 'David Kim is an innovative technologist with a passion for creating cutting-edge solutions.',
+    },
+    {
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },
+    {
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },{
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },{
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },{
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },{
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },
+    {
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
+    },{
+      name: 'Vinit Maharia',
+      position: 'CFO',
+      avatar: 'logo.png',
+      bio: 'Sophia Rodriguez is a financial expert with a track record of driving profitable growth in Fortune 500 companies.',
     },
     
   ];
@@ -127,6 +170,7 @@ const gradientAnimation = keyframes`
 // Styled components
 const BoardWrapper = styled.div`
   position: relative;
+  
   min-height: 100vh;
   background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #e94560);
   background-size: 400% 400%;
@@ -141,6 +185,7 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
+ 
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
@@ -156,6 +201,7 @@ const Title = styled.h1`
 
 const CardContainer = styled.div`
   display: grid;
+   
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   justify-items: center;
@@ -163,6 +209,7 @@ const CardContainer = styled.div`
 
 const AnimatedCard = styled(animated.div)`
   background-color: rgba(255, 255, 255, 0.1);
+  
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { FaHome, FaInfoCircle, FaLaptop, FaBriefcase, FaEnvelope, FaFileAlt, FaLock, FaArrowUp } from 'react-icons/fa';
 
 const FooterWrapper = styled.footer`
-  background: linear-gradient(to right, #1e3c72, #2a5298);
+  background-color: #1e3c72;
   color: #ffffff;
-  padding: 3rem 0 1rem;
+  padding: 2rem 0 1rem;
   font-family: 'Arial', sans-serif;
 `;
 
@@ -13,45 +13,44 @@ const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const TopSection = styled.div`
+  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
 `;
 
 const LogoSection = styled.div`
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Logo = styled.img`
-  width: 150px;
-  margin-bottom: 1rem;
+  width: 100px;
+  margin-bottom: 0.5rem;
 `;
 
 const Address = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  text-align: center;
   max-width: 200px;
-`;
-
-const LinkSection = styled.div`
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 2rem;
-`;
-
-const SectionTitle = styled.h3`
-  color: #ffa500;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
 `;
 
 const LinkList = styled.ul`
   list-style-type: none;
   padding: 0;
+  display: flex;
+  margin: 0;
 `;
 
 const LinkItem = styled.li`
-  margin-bottom: 0.5rem;
+  margin: 0 1rem;
 `;
 
 const Link = styled.a`
@@ -70,10 +69,27 @@ const Icon = styled.span`
   margin-right: 0.5rem;
 `;
 
+const ImageSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+`;
+
+const Image = styled.img`
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+`;
+
 const Copyright = styled.div`
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
@@ -110,30 +126,28 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContent>
-        <LogoSection>
-          <Logo src="logo.png" alt="QEM GROUP Logo" />
-          <Address>QEM Group, 7th Floor, Ambiance Mall, Gurugram</Address>
-        </LogoSection>
-        <LinkSection>
-          <SectionTitle>Quick Links</SectionTitle>
+        <TopSection>
+          <LogoSection>
+            <Logo src="logo.png" alt="QEM GROUP Logo" />
+            <Address>QEM Group, 7th Floor, Ambiance Mall, Gurugram</Address>
+          </LogoSection>
           <LinkList>
             <LinkItem><Link href="/"><Icon><FaHome /></Icon> Home</Link></LinkItem>
             <LinkItem><Link href="/AboutUs"><Icon><FaInfoCircle /></Icon> About Us</Link></LinkItem>
             <LinkItem><Link href="/platform"><Icon><FaLaptop /></Icon> Platform</Link></LinkItem>
             <LinkItem><Link href="/careers"><Icon><FaBriefcase /></Icon> Careers</Link></LinkItem>
-          </LinkList>
-        </LinkSection>
-        <LinkSection>
-          <SectionTitle>Support</SectionTitle>
-          <LinkList>
             <LinkItem><Link href="/contact"><Icon><FaEnvelope /></Icon> Contact Us</Link></LinkItem>
-            <LinkItem><Link href="/terms"><Icon><FaFileAlt /></Icon> Terms of Service</Link></LinkItem>
-            <LinkItem><Link href="/privacy"><Icon><FaLock /></Icon> Privacy Policy</Link></LinkItem>
+            <LinkItem><Link href="/terms"><Icon><FaFileAlt /></Icon> Terms</Link></LinkItem>
+            <LinkItem><Link href="/privacy"><Icon><FaLock /></Icon> Privacy</Link></LinkItem>
           </LinkList>
-        </LinkSection>
+        </TopSection>
+        <ImageSection>
+          <Image src="g20.jpeg" alt="G20" />
+          <Image src="aam.jpeg" alt="AAM" />
+        </ImageSection>
       </FooterContent>
       <Copyright>
-        © 2024, qem Group. All Rights Reserved
+        © 2024, QEM Group. All Rights Reserved
       </Copyright>
       <ScrollToTop onClick={scrollToTop} aria-label="Scroll to top">
         <FaArrowUp />

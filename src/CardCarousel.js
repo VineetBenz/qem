@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const cards = [
-  { name: 'Logistics', image: '6.jpeg' },
-  { name: 'Real Estate', image: 'logo.png' },
-  { name: 'Mineral Processing', image: 'logo.png' },
-  { name: 'Infrastructure', image: 'logo.png' },
-  { name: 'Mining Estate', image: 'logo.png' },
+  { name: '3Logistics', image: '6.jpeg' },
+  { name: '5Indistrial parks', image: '6.jpeg' },
+  { name: '2Mineral Processing', image: '6.jpeg' },
+  { name: '4Infrastructure', image: '6.jpeg' },
+  { name: '1Minning Estate', image: '6.jpeg' },
 ];
 
 const CardCarousel = () => {
@@ -47,7 +47,7 @@ const CardCarousel = () => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <h3 className="section-title">Our Divisions</h3>
+      <h3 className="section-title"> Verticals</h3>
       <div className="carousel">
         <motion.div
           className="carousel-inner"
@@ -77,14 +77,15 @@ const CardCarousel = () => {
           width: 100%;
           overflow: hidden;
           padding: 40px 0;
-          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          background: transparent;
         }
 
         .section-title {
-          text-align: center;
+          text-align: left;
           font-size: 36px;
           font-weight: 700;
           color: #333;
+          margin-left: 50px;
           margin-bottom: 30px;
           text-transform: uppercase;
           letter-spacing: 2px;
@@ -106,7 +107,7 @@ const CardCarousel = () => {
         .card-content {
           position: relative;
           width: 100%;
-          height: 300px;
+          height: 400px;
           border-radius: 15px;
           overflow: hidden;
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -137,12 +138,6 @@ const CardCarousel = () => {
           background: rgba(0, 0, 0, 0.7);
           color: white;
           padding: 20px;
-          transform: translateY(100%);
-          transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-overlay {
-          transform: translateY(0);
         }
 
         .card h3 {
@@ -152,8 +147,11 @@ const CardCarousel = () => {
         }
 
         .read-more {
-          background-color: #007bff;
-          color: white;
+          position: absolute;
+          bottom: 0.5rem;
+          right: 0.5rem;
+          background-color: transparent;
+          color: #FFFF00;
           border: none;
           padding: 8px 16px;
           cursor: pointer;

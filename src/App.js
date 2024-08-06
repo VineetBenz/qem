@@ -5,12 +5,13 @@ import Introduction from './Introduction.js';
 import CardCarousel from './CardCarousel.js';
 import Carousel from './Carousel';
 import WhatWeDo from './WhatWeDo.js';
-import BoardOfDirectors from './BoardOfDirectors.js';
+// import BoardOfDirectors from './BoardOfDirectors.js';
 import MiningLocations from './MiningLocations.js';
-import VisionMission from './VisionMission.js';
+// import VisionMission from './VisionMission.js';
 import Footer from './Footer.js';
 import AboutUs from './AboutUs.js';
-
+import TeamGrid from './TeamGrid.js';
+import CSR from './CSR.js';
 function App() {
   return (
     <Router>
@@ -23,9 +24,11 @@ function App() {
               <CardCarousel />
               <Carousel />
               <WhatWeDo />
-              <BoardOfDirectors />
+              < TeamGrid />
+              {/* <BoardOfDirectors /> */}
               <MiningLocations />
-              <VisionMission />
+              <CSR />
+              {/* <VisionMission /> */}
             </>
           } />
           <Route path="/about" element={<AboutUs />} />
