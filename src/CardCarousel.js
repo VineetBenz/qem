@@ -3,46 +3,44 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const cards = [
-  { name: 'Minning Estate', image: '6.jpeg' },
-  { name: 'Mineral Processing', image: '6.jpeg' },
-  { name: 'Logistics', image: '6.jpeg' },
-  { name: 'Infrastructure', image: '6.jpeg' },
-  { name: 'Indistrial parks', image: '6.jpeg' },
+  { name: 'Mining Estate', image: 'mining.jpeg' },
+  { name: 'Mineral Processing', image: 'mineral.jpeg' },
+  { name: 'Logistics', image: 'log.jpeg' },
+  { name: 'Infrastructure', image: 'infra.jpeg' },
+  { name: 'Industrial Parks', image: 'indistrial.jpeg' },
 ];
 
 const CardCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+  const [mousePosition, setMousePosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (currentIndex >= cards.length - 1) {
-        setDirection(-1);
-      } else if (currentIndex <= 0) {
-        setDirection(1);
-      }
-      setCurrentIndex((prevIndex) => prevIndex + direction);
-    }, 1000);
+    const handleMouseMove = (event) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
 
-    return () => clearInterval(intervalId);
-  }, [currentIndex, direction]);
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, when: "beforeChildren", staggerChildren: 0.1 }
+      transition: { duration: 0.7, ease: "easeInOut", when: "beforeChildren", staggerChildren: 0.2 }
     }
   };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } }
   };
 
   return (
@@ -57,14 +55,23 @@ const CardCarousel = () => {
       <div className="carousel">
         <motion.div
           className="carousel-inner"
-          animate={{ x: `${currentIndex * (direction === 1 ? -20 / cards.length : 30 / cards.length)}%` }}
-          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          drag="x"
+          dragConstraints={{ left: -((cards.length - 1) * (100 / cards.length) * (window.innerWidth / 100)), right: 0 }}
+          dragElastic={0.1}
+          whileTap={{ cursor: "grabbing" }}
+          style={{
+            x: mousePosition.x * 0.02 - window.innerWidth / 2 * 0.02,
+          }}
+          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
           {cards.map((card, index) => (
             <motion.div
               className="card"
               key={index}
               variants={cardVariants}
+              style={{
+                transform: `translateX(${(mousePosition.x - window.innerWidth / 2) * 0.02}px) translateY(${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`
+              }}
             >
               <div className="card-content">
                 <img src={card.image} alt={card.name} />
@@ -103,6 +110,7 @@ const CardCarousel = () => {
 
         .carousel-inner {
           display: flex;
+          cursor: grab;
         }
 
         .card {
@@ -117,7 +125,7 @@ const CardCarousel = () => {
           border-radius: 15px;
           overflow: hidden;
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
+          transition: all 0.5s ease-in-out;
         }
 
         .card:hover .card-content {
@@ -129,7 +137,7 @@ const CardCarousel = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: transform 0.5s ease-in-out;
         }
 
         .card:hover img {
@@ -144,6 +152,11 @@ const CardCarousel = () => {
           background: rgba(0, 0, 0, 0.7);
           color: white;
           padding: 20px;
+          transition: background 0.5s ease-in-out;
+        }
+
+        .card:hover .card-overlay {
+          background: rgba(0, 0, 0, 0.8);
         }
 
         .card h3 {
@@ -161,7 +174,7 @@ const CardCarousel = () => {
           border: none;
           padding: 8px 16px;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-in-out;
           border-radius: 20px;
           font-size: 14px;
           font-weight: 500;
