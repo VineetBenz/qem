@@ -15,7 +15,7 @@ const ContactUs = () => {
 					animate={{ x: 0 }}
 					transition={{ duration: 0.5, delay: 0.4 }}
 				>
-					<Title>Corporate Office:</Title>
+					<Title>CORPORATE OFFICE:</Title>
 					<Address>
 						701, 7th Floor, Ambience Mall,
 						<br />
@@ -31,11 +31,11 @@ const ContactUs = () => {
 					animate={{ x: 0 }}
 					transition={{ duration: 0.5, delay: 0.6 }}
 				>
-					<Title>Site Offices:</Title>
+					<Title>SITE OFFICES:</Title>
 					<OfficesWrapper>
 						{[
 							{
-								title: "Missionary Stone Mines & Crushing Plant",
+								title: "Masonry Stone Mines & Crushing Plant",
 								address:
 									"Vill. Ramkumarpura, Via-Papurana, Tehsil - Khetri, Distt. - Jhunjhunu, Rajasthan",
 								contact: "+ 91 - 9660357963",
@@ -47,13 +47,13 @@ const ContactUs = () => {
 								contact: "+ 91 - 9660357963",
 							},
 							{
-								title: "Missionary Stone Mines & Crushing Plant",
+								title: "Masonry Stone Mines & Crushing Plant",
 								address:
 									"Vill. Chhapoli, Tehsil - Udaipurwati, Distt. - Neemkathana, Rajasthan",
 								contact: "+ 91 - 9660357963",
 							},
 							{
-								title: "Missionary Stone Mines & Crushing Plant",
+								title: "Masonry Stone Mines & Crushing Plant",
 								address:
 									"Vill. Jharinda, Via-Toda, Neemkathana, Distt. - Sikar, Rajasthan",
 								contact: "+ 91 - 9351719580",
@@ -65,10 +65,10 @@ const ContactUs = () => {
 								contact: "+ 91 - 9660057127",
 							},
 							{
-								title: " Package -6B, HRRL Tankage Project ",
+								title: "Package -6B, HRRL Tankage Project ",
 								address:
-									" Vill. Panchpadra, Distt. Barmer, Rajasthan-344032.  ",
-								contact: "+ 91 - 7750968468 (Client Project)",
+									"Vill. Pachpadra, Distt. - Barmer, Rajasthan-344032.",
+								contact: "+ 91 - 7750968468 CLIENT - BRIDGE AND ROOF CO. (I) LTD.",
 							},
 						].map((office, index) => (
 							<Office
@@ -96,7 +96,7 @@ const ContactUs = () => {
 				animate={{ y: 0 }}
 				transition={{ duration: 0.5, delay: 1.2 }}
 			>
-				<FormTitle>Contact Form:</FormTitle>
+				<FormTitle>CONTACT FORM:</FormTitle>
 				<Form>
 					<Input placeholder="Company Name" />
 					<Input
@@ -150,7 +150,7 @@ const SiteOffices = styled(motion.div)`
 `;
 
 const Title = styled(motion.h2)`
-	font-size: 1.8rem;
+	font-size: 1.8rem; /* Font size remains unchanged */
 	margin-bottom: 1rem;
 	color: #00008b; /* Dark blue color */
 	text-align: center;
@@ -172,15 +172,15 @@ const Office = styled(motion.div)`
 `;
 
 const OfficeTitle = styled(motion.h3)`
-	font-size: 1.4rem;
+	font-size: 1.4rem; /* Font size remains unchanged */
 	margin-bottom: 0.5rem;
-	color: #5dade2; /* Light blue color */
+	color: #191970; /* Light blue color */
 	text-align: center;
 `;
 
 const Address = styled(motion.p)`
 	line-height: 1.5;
-	font-size: 1rem;
+	font-size: 1.2rem; /* Increased font size for Address */
 	color: #2c3e50; /* Dark blue color */
 	text-align: center;
 `;
@@ -228,7 +228,7 @@ const Button = styled(motion.button)`
 	padding: 0.75rem 1.5rem;
 	font-size: 1rem;
 	color: #fff;
-	background-color: #2980b9;
+	background-color: #1e3c72;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;

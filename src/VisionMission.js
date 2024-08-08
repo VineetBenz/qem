@@ -121,7 +121,7 @@ const VisionMission = () => {
               Our Vision
             </SectionTitle>
             <SectionContent>
-              "To be the leading mining company by utilizing advanced technology, providing the most cost effective solutions, and implementing best practices in project management"
+              "To be the leading Mining and Infrastructure company by utilizing advanced technology, providing the most cost effective solutions, and implementing best practices in project management"
             </SectionContent>
           </Section>
           <Section>

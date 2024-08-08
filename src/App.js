@@ -16,6 +16,7 @@ import CSR from './CSR.js';
 import QEMGroupPage from './QEMGroupPage.js';
 import ContactUs from './ContactUs.js';
 import CSRpage from './CSRpage.js';
+import ImageGallery from './ImageGallery.js';
 function App() {
   return (
     <Router>
@@ -29,8 +30,10 @@ function App() {
               <Carousel />
               <WhatWeDo />
               < TeamGrid />
+              
               {/* <BoardOfDirectors /> */}
-              <MiningLocations />
+              {/* <MiningLocations /> */}
+              {/* OUR PROJECTS */}
               <CSR />
               {/* <VisionMission /> */}
               {/* <ContactUs /> */}
@@ -41,6 +44,7 @@ function App() {
           <Route path="/Businesses" element={<QEMGroupPage />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/CSRpage" element={<CSRpage />} />
+          <Route path="/ImageGallery" element={<ImageGallery />} />
         </Routes>
         <Footer />
       </div>

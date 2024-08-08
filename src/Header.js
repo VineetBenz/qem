@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaHome, FaInfoCircle, FaBriefcase, FaHandsHelping, FaUserTie, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBriefcase, FaHandsHelping, FaUserTie, FaEnvelope, FaFilm } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ const Logo = styled.img`
 `;
 
 const CompanyName = styled(motion.h1)`
-  color: #333;
+  color: #ffff;
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 600;
@@ -54,6 +54,7 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled(motion.li)`
+
   margin-right: 30px;
   margin-bottom: 10px;
   &:last-child {
@@ -64,7 +65,7 @@ const NavItem = styled(motion.li)`
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  color: #333;
+  color: #ffff;
   font-size: 1.4rem;
   font-weight: 500;
   display: flex;
@@ -115,11 +116,14 @@ const Header = () => {
     { name: 'Business', icon: FaBriefcase, path: '/businesses' },
     { name: 'CSR', icon: FaHandsHelping, path: '/CSRpage' },
     { name: 'Career', icon: FaUserTie, path: '/CareersPage' },
+    { name: 'Gallery', icon: FaFilm, path: '/ImageGallery' },
     { name: 'Contact', icon: FaEnvelope, path: '/ContactUs' },
+  
   ];
+  
 
   return (
-    <StyledHeader style={{ background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.9)' }}>
+    <StyledHeader style={{ background: scrolled ? '#1e3c72' : '#1e3c72' }}>
       <HeaderContent>
         <LogoContainer
           initial={{ opacity: 0, x: -50 }}
@@ -132,7 +136,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            QEM Group
+            QEM GROUP
           </CompanyName>
         </LogoContainer>
         <Nav>
