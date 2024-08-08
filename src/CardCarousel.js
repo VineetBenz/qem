@@ -1,89 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 const cards = [
   { name: 'Mining Estate', image: 'mining.jpeg' },
   { name: 'Mineral Processing', image: 'mineral.jpeg' },
   { name: 'Logistics', image: 'log.jpeg' },
   { name: 'Infrastructure', image: 'infra.jpeg' },
-  { name: 'Industrial Parks', image: 'indistrial.jpeg' },
+  { name: 'Industrial Parks', image: 'indistrial.jpeg' }, // Corrected here
 ];
 
 const CardCarousel = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-  const [mousePosition, setMousePosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeInOut", when: "beforeChildren", staggerChildren: 0.2 }
+    animate: {
+      x: [0, -100 * cards.length + 100, 0],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 20,
+          ease: 'linear'
+        }
+      }
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } }
-  };
-
   return (
-    <motion.div
-      className="carousel-container"
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
+    <div className="carousel-container">
       <h3 className="section-title">Our Verticals</h3>
-      <div className="carousel">
-        <motion.div
-          className="carousel-inner"
-          drag="x"
-          dragConstraints={{ left: -((cards.length - 1) * (100 / cards.length) * (window.innerWidth / 100)), right: 0 }}
-          dragElastic={0.1}
-          whileTap={{ cursor: "grabbing" }}
-          style={{
-            x: mousePosition.x * 0.02 - window.innerWidth / 2 * 0.02,
-          }}
-          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        >
-          {cards.map((card, index) => (
-            <motion.div
-              className="card"
-              key={index}
-              variants={cardVariants}
-              style={{
-                transform: `translateX(${(mousePosition.x - window.innerWidth / 2) * 0.02}px) translateY(${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`
-              }}
-            >
-              <div className="card-content">
-                <img src={card.image} alt={card.name} />
-                <div className="card-overlay">
-                  <h3>{card.name}</h3>
-                  <button className="read-more">More</button>
-                </div>
+      <motion.div
+        className="carousel"
+        variants={containerVariants}
+        animate="animate"
+      >
+        {cards.concat(cards).map((card, index) => (
+          <div className="card" key={index}>
+            <div className="card-content">
+              <img src={card.image} alt={card.name} />
+              <div className="card-overlay">
+                <h3>{card.name}</h3>
+                <button className="read-more">More</button>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+            </div>
+          </div>
+        ))}
+      </motion.div>
 
       <style jsx>{`
         .carousel-container {
@@ -105,17 +65,13 @@ const CardCarousel = () => {
         }
 
         .carousel {
-          width: 100%;
-        }
-
-        .carousel-inner {
           display: flex;
-          cursor: grab;
         }
 
         .card {
           flex: 0 0 ${100 / cards.length}%;
           padding: 20px;
+          box-sizing: border-box;
         }
 
         .card-content {
@@ -188,7 +144,7 @@ const CardCarousel = () => {
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
       `}</style>
-    </motion.div>
+    </div>
   );
 };
 

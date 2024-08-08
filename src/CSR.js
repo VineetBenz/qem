@@ -1,56 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 
-const images = ['9.jpeg', '10.jpeg','11.jpeg', '12.jpeg','23.jpeg',];
-
-const CarouselContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.5s ease-in-out;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background-image: url(${props => props.backgroundImage});
-`;
-
-const ContentOverlay = styled.div`
-  background-color: rgba(0, 18, 0, 0.5);
-  color: white;
-  padding: 2rem;
-  max-width: 600px;
-  border-radius: 0 0 10px 0;
-  margin-top: -50px;
-  margin-left: 0;
-`;
-
-const Title = styled.h2`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-`;
-
-const Paragraph = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-`;
-
-const ReadMoreButton = styled.button`
-  background-color: white;
-  color: green;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-`;
+const images = ['9.jpeg', '10.jpeg', '11.jpeg', '12.jpeg', '23.jpeg'];
 
 const CSR = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -58,26 +8,31 @@ const CSR = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <CarouselContainer backgroundImage={images[currentImageIndex]}>
-      <ContentOverlay>
-        <Title>Corporate Social Responsibility</Title>
-        <Paragraph>
-          QEM Group is committed to sustainable development by fostering strong relationships with surrounding communities. 
-          Their CSR and Periphery Development activities focus on healthcare, education, talent promotion, sports, art and culture, 
-          environmental protection, energy conservation, clean water and sanitation, skill development, livelihood promotion, 
-          infrastructure development, post-disaster recovery, hunger eradication, and other community initiatives. These efforts 
-          have made a positive impact on the socio-economic development of the peripheral areas and beyond. The organization's 
+    <div
+      className="w-full h-screen mt-12 mb-12 bg-cover bg-center transition-all duration-500"
+      style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+    >
+      <div className="bg-black bg-opacity-50 text-white p-8 max-w-lg rounded-bl-2xl mt-[-50px]">
+        <h2 className="text-3xl mb-4">Corporate Social Responsibility</h2>
+        <p className="text-base leading-relaxed mb-4">
+          QEM Group is committed to sustainable development by fostering strong relationships with surrounding communities.
+          Their CSR and Periphery Development activities focus on healthcare, education, talent promotion, sports, art and culture,
+          environmental protection, energy conservation, clean water and sanitation, skill development, livelihood promotion,
+          infrastructure development, post-disaster recovery, hunger eradication, and other community initiatives. These efforts
+          have made a positive impact on the socio-economic development of the peripheral areas and beyond. The organization's
           dedication to community well-being is central to its sustainability strategy.
-        </Paragraph>
-        <ReadMoreButton>Read More →</ReadMoreButton>
-      </ContentOverlay>
-    </CarouselContainer>
+        </p>
+        <button className="bg-white text-green-600 border-0 py-2 px-4 text-base cursor-pointer transition duration-300 ease-in-out hover:bg-gray-200">
+          Read More →
+        </button>
+      </div>
+    </div>
   );
 };
 

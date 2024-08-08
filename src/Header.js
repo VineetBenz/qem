@@ -112,10 +112,10 @@ const Header = () => {
   const navItems = [
     { name: 'Home', icon: FaHome, path: '/' },
     { name: 'About', icon: FaInfoCircle, path: '/about' },
-    { name: 'Business', icon: FaBriefcase, path: '/business' },
-    { name: 'CSR', icon: FaHandsHelping, path: '/csr' },
-    { name: 'Career', icon: FaUserTie, path: '/career' },
-    { name: 'Contact', icon: FaEnvelope, path: '/contact' },
+    { name: 'Business', icon: FaBriefcase, path: '/businesses' },
+    { name: 'CSR', icon: FaHandsHelping, path: '/CSRpage' },
+    { name: 'Career', icon: FaUserTie, path: '/CareersPage' },
+    { name: 'Contact', icon: FaEnvelope, path: '/ContactUs' },
   ];
 
   return (

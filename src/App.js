@@ -10,8 +10,12 @@ import MiningLocations from './MiningLocations.js';
 // import VisionMission from './VisionMission.js';
 import Footer from './Footer.js';
 import AboutUs from './AboutUs.js';
+import CareersPage from './CareersPage.js';
 import TeamGrid from './TeamGrid.js';
 import CSR from './CSR.js';
+import QEMGroupPage from './QEMGroupPage.js';
+import ContactUs from './ContactUs.js';
+import CSRpage from './CSRpage.js';
 function App() {
   return (
     <Router>
@@ -29,9 +33,14 @@ function App() {
               <MiningLocations />
               <CSR />
               {/* <VisionMission /> */}
+              {/* <ContactUs /> */}
             </>
           } />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/CareersPage" element={<CareersPage />} />
+          <Route path="/Businesses" element={<QEMGroupPage />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/CSRpage" element={<CSRpage />} />
         </Routes>
         <Footer />
       </div>

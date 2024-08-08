@@ -44,8 +44,8 @@ const TeamGrid = () => {
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(200, 200, 200, 0.5)';
-      ctx.strokeStyle = 'rgba(200, 200, 200, 0.3)';
+      ctx.fillStyle = 'rgba(255, 225, 225, 0.7)';
+      ctx.strokeStyle = 'rgba(225, 225, 225, 0.7)';
 
       particles.forEach((particle, i) => {
         particle.x += particle.vx;

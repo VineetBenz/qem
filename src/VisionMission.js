@@ -22,10 +22,10 @@ const VisionMissionContainer = styled(motion.div)`
   width: 100%;
 `;
 
-const Logo = styled(motion.img)`
-  width: 150px;
-  margin-bottom: 30px;
-`;
+// const Logo = styled(motion.img)`
+//   width: 150px;
+//   margin-bottom: 30px;
+// `;
 
 const Title = styled(motion.h1)`
   font-size: 3rem;
@@ -97,7 +97,7 @@ const VisionMission = () => {
         hidden: { opacity: 0, y: 50 },
       }}
     >
-      <Logo
+      {/* <Logo
         src="/logo.png"
         alt="Company Logo"
         initial={{ scale: 0 }}
@@ -107,7 +107,7 @@ const VisionMission = () => {
           stiffness: 260,
           damping: 20
         }}
-      />
+      /> */}
       <Title className="typing-text" />
       <Tilt options={{ max: 25, scale: 1.05 }}>
         <ContentBox

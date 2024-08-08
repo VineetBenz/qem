@@ -23,7 +23,7 @@ const Introduction = () => {
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent overlay
+      backgroundColor: 'rgba(0, 0, 0, 0)', // Semi-transparent overlay
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
@@ -58,7 +58,7 @@ const Introduction = () => {
         muted 
         playsInline
       >
-        <source src="abc.mp4" type="video/mp4" />
+        <source src="abcd.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div style={styles.overlay}>

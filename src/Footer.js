@@ -7,6 +7,7 @@ const FooterWrapper = styled.footer`
   color: #ffffff;
   padding: 2rem 0 1rem;
   font-family: 'Arial', sans-serif;
+  position: relative;
 `;
 
 const FooterContent = styled.div`
@@ -70,20 +71,19 @@ const Icon = styled.span`
 `;
 
 const ImageSection = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: calc(20px + 2cm); /* Move 2cm to the left */
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
 `;
 
-const Image = styled.img`
-  width: 220px;
-  height: 120px;
+const SchemeImage = styled.img`
+  width: 80px;
+  height: 50px;
   object-fit: cover;
-  margin: 0.5rem;
   border-radius: 5px;
+  margin-left: 0.5rem;
 `;
 
 const Copyright = styled.div`
@@ -129,7 +129,7 @@ const Footer = () => {
         <TopSection>
           <LogoSection>
             <Logo src="logo.png" alt="QEM GROUP Logo" />
-            <Address>QEM Group, 7th Floor, Ambiance Mall, Gurugram</Address>
+            <Address></Address>
           </LogoSection>
           <LinkList>
             <LinkItem><Link href="/"><Icon><FaHome /></Icon> Home</Link></LinkItem>
@@ -142,10 +142,10 @@ const Footer = () => {
           </LinkList>
         </TopSection>
         <ImageSection>
-          <Image src="g20.jpeg" alt="G20" />
-          <Image src="aam.jpeg" alt="AAM" />
-          <Image src="bbbp.jpeg" alt="G20" />
-          <Image src="ci.jpeg" alt="AAM" />
+          <SchemeImage src="g20.jpeg" alt="G20" />
+          <SchemeImage src="aam.jpeg" alt="AAM" />
+          <SchemeImage src="bbbp.jpeg" alt="Beti Bachao Beti Padhao" />
+          <SchemeImage src="ci.jpeg" alt="Swachh Bharat" />
         </ImageSection>
       </FooterContent>
       <Copyright>
