@@ -17,6 +17,7 @@ import QEMGroupPage from './QEMGroupPage.js';
 import ContactUs from './ContactUs.js';
 import CSRpage from './CSRpage.js';
 import ImageGallery from './ImageGallery.js';
+import MajorProjects from './MajorProjects.js';
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
               <CardCarousel />
               <Carousel />
               <WhatWeDo />
+              <MajorProjects />
               < TeamGrid />
               
               {/* <BoardOfDirectors /> */}

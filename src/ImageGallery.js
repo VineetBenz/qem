@@ -2,71 +2,75 @@ import React, { useState } from 'react';
 
 const ImageGallery = () => {
   const images = [
-    
+    {
+      src: '48.jpg',
+      title: 'Office Meeting 2023',
+      category: 'OFFICE',
+    },
     {
       src: '33.jpg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '32.jpg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '47.jpg',
       title: 'Office Seminar',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '34.jpg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '46.jpg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '35.jpg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '45.jpeg',
       title: 'Office Meeting 2023',
-      category: 'office',
+      category: 'OFFICE',
     },
     {
       src: '54.jpeg',
       title: 'Mining Operations',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '50.jpeg',
       title: 'Mining Excavation',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '53.jpg',
       title: 'Mining Equipment',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '52.jpeg',
       title: 'Mining Operations',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '68.png',
       title: 'Mining Operations',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '60.png',
       title: 'Mining Operations',
-      category: 'mining',
+      category: 'MINING',
     },
     {
       src: '87.jpeg',
@@ -112,7 +116,7 @@ const ImageGallery = () => {
     // Add more images as needed
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState('office');
+  const [selectedCategory, setSelectedCategory] = useState('OFFICE');
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -125,16 +129,16 @@ const ImageGallery = () => {
   return (
     <div className="container mx-auto my-8 bg-gradient-to-r from-orange-100 via-orange-300 to-orange-500 p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-extrabold text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-700">
+        <h1 className="text-3xl font-extrabold text-black bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-700">
           {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Image Gallery
         </h1>
         <select
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className="block rounded-full border-2 border-orange-500 shadow-sm focus:border-orange-600 focus:ring-orange-600 sm:text-sm bg-white text-orange-600 hover:bg-orange-100 transition-colors"
+          className="block w-40 h-10 rounded-full border-2 border-orange-500 shadow-sm focus:border-orange-600 focus:ring-orange-600 sm:text-sm bg-white text-orange-700 hover:bg-orange-100 transition-colors"
         >
-          <option value="office">Office</option>
-          <option value="mining">Mining</option>
+          <option value="OFFICE">Office</option>
+          <option value="MINING">Mining</option>
           <option value="CSR">CSR</option>
           {/* Add more options as needed */}
         </select>

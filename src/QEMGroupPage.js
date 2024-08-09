@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Carousel from './Carousel';
+import MajorProjects from './MajorProjects';
 
 import MiningLocations from './MiningLocations';
 const QEMGroupPage = () => {
@@ -87,7 +88,7 @@ const QEMGroupPage = () => {
             </p>
           </div>
         </section>
-
+            <MajorProjects />
         <MiningLocations />
       </main>
     </div>
