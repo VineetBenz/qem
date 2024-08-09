@@ -6,7 +6,7 @@ const cards = [
   { name: 'Mineral Processing', image: 'mineral.jpeg' },
   { name: 'Logistics', image: 'log.jpeg' },
   { name: 'Infrastructure', image: 'infra.jpeg' },
-  { name: 'Industrial Parks', image: 'indistrial.jpeg' }, // Corrected here
+  { name: 'Industrial Parks', image: 'industrial.jpeg' },
 ];
 
 const CardCarousel = () => {
@@ -25,125 +25,35 @@ const CardCarousel = () => {
   };
 
   return (
-    <div className="carousel-container">
-      <h3 className="section-title">Our Verticals</h3>
+    <div className="w-full overflow-hidden py-10 bg-transparent">
+      <h3 className="text-left text-3xl md:text-4xl font-bold text-gray-800 ml-4 md:ml-12 mb-8 uppercase tracking-wider">
+        Our Verticals
+      </h3>
       <motion.div
-        className="carousel"
+        className="flex"
         variants={containerVariants}
         animate="animate"
       >
         {cards.concat(cards).map((card, index) => (
-          <div className="card" key={index}>
-            <div className="card-content">
-              <img src={card.image} alt={card.name} />
-              <div className="card-overlay">
-                <h3>{card.name}</h3>
-                <button className="read-more">More</button>
+          <div className="flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4" key={index}>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+              <img 
+                src={card.image} 
+                alt={card.name} 
+                className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-70 transition-all duration-500 ease-in-out hover:bg-opacity-80">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-white text-xl font-semibold mb-2">{card.name}</h3>
+                  <button className="absolute bottom-2 right-2 bg-transparent text-yellow-400 border border-yellow-400 px-3 py-1 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white hover:border-blue-700 transform hover:-translate-y-1 hover:shadow-md">
+                    More
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </motion.div>
-
-      <style jsx>{`
-        .carousel-container {
-          width: 100%;
-          overflow: hidden;
-          padding: 40px 0;
-          background: transparent;
-        }
-
-        .section-title {
-          text-align: left;
-          font-size: 36px;
-          font-weight: 700;
-          color: #333;
-          margin-left: 50px;
-          margin-bottom: 30px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-
-        .carousel {
-          display: flex;
-        }
-
-        .card {
-          flex: 0 0 ${100 / cards.length}%;
-          padding: 20px;
-          box-sizing: border-box;
-        }
-
-        .card-content {
-          position: relative;
-          width: 100%;
-          height: 400px;
-          border-radius: 15px;
-          overflow: hidden;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          transition: all 0.5s ease-in-out;
-        }
-
-        .card:hover .card-content {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease-in-out;
-        }
-
-        .card:hover img {
-          transform: scale(1.1);
-        }
-
-        .card-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: rgba(0, 0, 0, 0.7);
-          color: white;
-          padding: 20px;
-          transition: background 0.5s ease-in-out;
-        }
-
-        .card:hover .card-overlay {
-          background: rgba(0, 0, 0, 0.8);
-        }
-
-        .card h3 {
-          margin: 0 0 10px;
-          font-size: 24px;
-          font-weight: 600;
-        }
-
-        .read-more {
-          position: absolute;
-          bottom: 0.5rem;
-          right: 0.5rem;
-          background-color: transparent;
-          color: #FFFF00;
-          border: none;
-          padding: 8px 16px;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .read-more:hover {
-          background-color: #0056b3;
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-      `}</style>
     </div>
   );
 };
