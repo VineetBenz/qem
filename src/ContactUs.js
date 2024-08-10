@@ -43,37 +43,37 @@ const ContactUs = () => {
               {
                 title: "Masonry Stone Mines & Crushing Plant",
                 address:
-                  "Vill. Ramkumarpura, Via-Papurana, Tehsil - Khetri, Distt. - Jhunjhunu, Rajasthan",
+                  "Vill. Ramkumarpura, Via-Papurana, Tehsil - Khetri, Dist. - Jhunjhunu, Rajasthan",
                 contact: "9660357963",
               },
               {
                 title: "Granite Mines & Manufacturing",
                 address:
-                  "Vill. Surkhand, Tehsil - Kanore, Distt. - Udaipur, Rajasthan",
+                  "Vill. Surkhand, Tehsil - Kanore, Dist. - Udaipur, Rajasthan",
                 contact: "9660357963",
               },
               {
                 title: "Masonry Stone Mines & Crushing Plant",
                 address:
-                  "Vill. Chhapoli, Tehsil-Udaipurwati, Distt-Neemkathana, Rajasthan",
+                  "Vill. Chhapoli, Tehsil-Udaipurwati, Dist-Neemkathana, Rajasthan",
                 contact: "9660357963",
               },
               {
                 title: "Masonry Stone Mines & Crushing Plant",
                 address:
-                  "Vill. Jharinda, Via-Toda, Neemkathana, Distt. - Sikar, Rajasthan",
+                  "Vill. Jharinda, Via-Toda, Neemkathana, Dist. - Sikar, Rajasthan",
                 contact: "9351719580",
               },
               {
                 title: "Silica Sand Mines",
                 address:
-                  "Vill. Sohanpura, Via-Patan, Distt. - Sikar, Rajasthan",
+                  "Vill. Sohanpura, Via-Patan, Dist. - Sikar, Rajasthan",
                 contact: "9660057127",
               },
               {
                 title: "Package -6B, HRRL Tankage Project",
                 address:
-                  "Vill. Pachpadra, Distt. - Barmer, Rajasthan-344032.",
+                  "Vill. Pachpadra, Dist. - Barmer, Rajasthan-344032.",
                 contact: "7750968468 CLIENT - BRIDGE AND ROOF CO. (I) LTD.",
               },
             ].map((office, index) => (

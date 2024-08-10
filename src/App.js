@@ -6,7 +6,7 @@ import CardCarousel from './CardCarousel.js';
 import Carousel from './Carousel';
 import WhatWeDo from './WhatWeDo.js';
 // import BoardOfDirectors from './BoardOfDirectors.js';
-import MiningLocations from './MiningLocations.js';
+//import MiningLocations from './MiningLocations.js';
 import MineralProcessing from './MineralProcessing'; // Adjust path as needed
 import Logistics from './Logistics'; // Adjust path as needed
 import Infrastructure from './Infrastructure'; // Adjust path as needed
@@ -23,6 +23,7 @@ import CSRpage from './CSRpage.js';
 import ImageGallery from './ImageGallery.js';
 import MajorProjects from './MajorProjects.js';
 import MiningEstate from './MiningEstate.js'; 
+import TermsAndPrivacy from './privacy.js';
 function App() {
   return (
     <Router>
@@ -57,6 +58,7 @@ function App() {
           <Route path="/logistics" element={<Logistics />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/industrial-parks" element={<IndustrialParks />} />
+          <Route path="/privacy" element={<TermsAndPrivacy />} />
         </Routes>
         <Footer />
       </div>

@@ -31,7 +31,7 @@ const Footer = () => {
               { href: "/platform", icon: <FaLaptop />, text: "Platform" },
               { href: "/careers", icon: <FaBriefcase />, text: "Careers" },
               { href: "/contact", icon: <FaEnvelope />, text: "Contact Us" },
-              { href: "/terms", icon: <FaFileAlt />, text: "Terms" },
+              { href: "/privacy", icon: <FaFileAlt />, text: "Terms" },
               { href: "/privacy", icon: <FaLock />, text: "Privacy" },
             ].map((link, index) => (
               <li key={index} className="mx-2 my-1">
