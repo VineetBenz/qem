@@ -27,10 +27,10 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center">
             {[
               { href: "/", icon: <FaHome />, text: "Home" },
-              { href: "/AboutUs", icon: <FaInfoCircle />, text: "About Us" },
-              { href: "/platform", icon: <FaLaptop />, text: "Platform" },
-              { href: "/careers", icon: <FaBriefcase />, text: "Careers" },
-              { href: "/contact", icon: <FaEnvelope />, text: "Contact Us" },
+              { href: "/about", icon: <FaInfoCircle />, text: "About Us" },
+              { href: "/businesses", icon: <FaLaptop />, text: "Platform" },
+              { href: "/CareersPage", icon: <FaBriefcase />, text: "Careers" },
+              { href: "/ContactUs", icon: <FaEnvelope />, text: "Contact Us" },
               { href: "/privacy", icon: <FaFileAlt />, text: "Terms" },
               { href: "/privacy", icon: <FaLock />, text: "Privacy" },
             ].map((link, index) => (
