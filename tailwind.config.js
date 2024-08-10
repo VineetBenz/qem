@@ -4,11 +4,23 @@ module.exports = {
     ],
     theme: {
       extend: {
-        colors: {
-          primary: '#0047AB', // A professional blue color
-          secondary: '#6C757D',
+        textShadow: {
+          'text': '2px 2px 4px rgba(0,0,0,0.5)',
+          'text-sm': '1px 1px 2px rgba(0,0,0,0.5)',
         },
       },
     },
-    plugins: [],
+    plugins: [
+      function ({ addUtilities }) {
+        const newUtilities = {
+          '.shadow-text': {
+            textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+          },
+          '.shadow-text-sm': {
+            textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
+          },
+        }
+        addUtilities(newUtilities)
+      }
+    ],
   }

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Tilt } from 'react-tilt';
@@ -8,61 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
-const VisionMissionContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #6dd5ed, #2193b0);
-  text-align: center;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-`;
-
-// const Logo = styled(motion.img)`
-//   width: 150px;
-//   margin-bottom: 30px;
-// `;
-
-const Title = styled(motion.h1)`
-  font-size: 3rem;
-  margin-bottom: 30px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-`;
-
-const ContentBox = styled(motion.div)`
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
-  padding: 40px;
-  margin: 20px 0;
-  max-width: 800px;
-  width: 90%;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-`;
-
-const Section = styled(motion.div)`
-  margin-bottom: 30px;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #2c3e50;
-`;
-
-const SectionContent = styled(motion.p)`
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #34495e;
-`;
 
 const VisionMission = () => {
   const { ref, inView } = useInView({
@@ -88,53 +32,39 @@ const VisionMission = () => {
   }, []);
 
   return (
-    <VisionMissionContainer
+    <div
       ref={containerRef}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 },
-      }}
+      className="flex flex-col items-center justify-center p-12 bg-gradient-to-br from-blue-300 to-blue-700 text-center min-h-screen w-full relative"
     >
-      {/* <Logo
-        src="/logo.png"
-        alt="Company Logo"
-        initial={{ scale: 0 }}
-        animate={{ rotate: 360, scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20
-        }}
-      /> */}
-      <Title className="typing-text" />
+      <h1 className="typing-text text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 shadow-lg">
+        {/* The GSAP animation will update this text */}
+      </h1>
       <Tilt options={{ max: 25, scale: 1.05 }}>
-        <ContentBox
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className={`bg-white bg-opacity-90 rounded-lg p-8 shadow-xl max-w-4xl w-full mb-8 ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          } transition-opacity duration-800 ease-out`}
         >
-          <Section>
-            <SectionTitle>
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Our Vision
-            </SectionTitle>
-            <SectionContent>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               "To be the leading Mining and Infrastructure company by utilizing advanced technology, providing the most cost effective solutions, and implementing best practices in project management"
-            </SectionContent>
-          </Section>
-          <Section>
-            <SectionTitle>
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Our Mission
-            </SectionTitle>
-            <SectionContent>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               "To serve sincerely, efficiently and build mutual relationship with customers satisfaction, social obligation and active environment friendly policy"
-            </SectionContent>
-          </Section>
-        </ContentBox>
+            </p>
+          </div>
+        </div>
       </Tilt>
-    </VisionMissionContainer>
+    </div>
   );
 };
 

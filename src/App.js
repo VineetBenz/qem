@@ -7,17 +7,22 @@ import Carousel from './Carousel';
 import WhatWeDo from './WhatWeDo.js';
 // import BoardOfDirectors from './BoardOfDirectors.js';
 import MiningLocations from './MiningLocations.js';
+import MineralProcessing from './MineralProcessing'; // Adjust path as needed
+import Logistics from './Logistics'; // Adjust path as needed
+import Infrastructure from './Infrastructure'; // Adjust path as needed
+import IndustrialParks from './IndustrialParks';
 // import VisionMission from './VisionMission.js';
 import Footer from './Footer.js';
 import AboutUs from './AboutUs.js';
 import CareersPage from './CareersPage.js';
-import TeamGrid from './TeamGrid.js';
+import DivisionTabs from './DivisionTabs.js';
 import CSR from './CSR.js';
 import QEMGroupPage from './QEMGroupPage.js';
 import ContactUs from './ContactUs.js';
 import CSRpage from './CSRpage.js';
 import ImageGallery from './ImageGallery.js';
 import MajorProjects from './MajorProjects.js';
+import MiningEstate from './MiningEstate.js'; 
 function App() {
   return (
     <Router>
@@ -31,7 +36,7 @@ function App() {
               <Carousel />
               <WhatWeDo />
               <MajorProjects />
-              < TeamGrid />
+              <DivisionTabs />
               
               {/* <BoardOfDirectors /> */}
               {/* <MiningLocations /> */}
@@ -47,6 +52,11 @@ function App() {
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/CSRpage" element={<CSRpage />} />
           <Route path="/ImageGallery" element={<ImageGallery />} />
+          <Route path="/mining-estate" element={<MiningEstate />} />
+          <Route path="/mineral-processing" element={<MineralProcessing />} />
+          <Route path="/logistics" element={<Logistics />} />
+          <Route path="/infrastructure" element={<Infrastructure />} />
+          <Route path="/industrial-parks" element={<IndustrialParks />} />
         </Routes>
         <Footer />
       </div>

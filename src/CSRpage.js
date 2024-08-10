@@ -9,7 +9,7 @@ import img3 from './11.jpeg';
 import img4 from './12.jpeg';
 import img5 from './23.jpeg';
 
-const images = [img1, img2, img3, img4, img5, '35.jpeg','36.jpeg','37.jpeg','38.jpeg'];
+const images = [img1, img2, img3, img4, img5];
 
 const CSRPage = () => {
   const { ref, inView } = useInView({

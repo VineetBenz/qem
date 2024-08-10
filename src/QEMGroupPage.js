@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -10,9 +10,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Carousel from './Carousel';
 import MajorProjects from './MajorProjects';
-
 import MiningLocations from './MiningLocations';
+
 const QEMGroupPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -21,11 +23,11 @@ const QEMGroupPage = () => {
   }, []);
 
   const businessAreas = [
-    { name: 'Mining Estate', image: 'mining.jpeg' },
-    { name: 'Mineral Processing', image: 'mineral.jpeg' },
-    { name: 'Logistics', image: 'log.jpeg' },
-    { name: 'Infrastructure', image: 'infra.jpeg' },
-    { name: 'Industrial Parks', image: 'indistrial.jpeg' },
+    { name: 'Mining Estate', image: 'mining.jpeg', path: '/mining-estate' },
+    { name: 'Mineral Processing', image: 'mineral.jpeg', path: '/mineral-processing' },
+    { name: 'Logistics', image: '53.jpg', path: '/logistics' },
+    { name: 'Infrastructure', image: 'infra.jpeg', path: '/infrastructure' },
+    { name: 'Industrial Parks', image: 'indistrial.jpeg', path: '/industrial-parks' },
   ];
 
   const locations = [
@@ -39,6 +41,10 @@ const QEMGroupPage = () => {
     const [lat, lng] = coords;
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     window.open(googleMapsUrl, '_blank');
+  };
+
+  const handleBusinessAreaClick = (path) => {
+    navigate(path);
   };
 
   return (
@@ -56,8 +62,9 @@ const QEMGroupPage = () => {
             {businessAreas.map((area) => (
               <motion.div
                 key={area.name}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
                 whileHover={{ y: -5 }}
+                onClick={() => handleBusinessAreaClick(area.path)}
               >
                 <img src={area.image} alt={area.name} className="w-full h-48 object-cover" />
                 <h3 className="text-xl font-semibold p-4">{area.name}</h3>
@@ -88,7 +95,7 @@ const QEMGroupPage = () => {
             </p>
           </div>
         </section>
-            <MajorProjects />
+        <MajorProjects />
         <MiningLocations />
       </main>
     </div>

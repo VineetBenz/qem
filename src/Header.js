@@ -26,7 +26,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-blue-900' : 'bg-blue-800'}`}>
+    <header className={` w-full z-50 transition-all duration-300 ${scrolled ? 'bg-blue-900' : 'bg-blue-800'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -38,6 +38,9 @@ const Header = () => {
               />
               <h1 className="ml-3 text-xl font-bold text-white sm:text-2xl md:text-3xl">
                 QEM GROUP
+                <span className="block text-sm font-normal text-yellow-400">
+									{"{"}AN ISO 9001:2015 CERTIFIED{"}"}
+								</span>
               </h1>
             </Link>
           </div>
