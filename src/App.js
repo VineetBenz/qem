@@ -15,7 +15,7 @@ import IndustrialParks from './IndustrialParks';
 import Footer from './Footer.js';
 import AboutUs from './AboutUs.js';
 import CareersPage from './CareersPage.js';
-import DivisionTabs from './DivisionTabs.js';
+// import DivisionTabs from './DivisionTabs.js';
 import CSR from './CSR.js';
 import QEMGroupPage from './QEMGroupPage.js';
 import ContactUs from './ContactUs.js';
@@ -37,7 +37,7 @@ function App() {
               <Carousel />
               <WhatWeDo />
               <MajorProjects />
-              <DivisionTabs />
+              {/*<DivisionTabs />/*}
               
               {/* <BoardOfDirectors /> */}
               {/* <MiningLocations /> */}

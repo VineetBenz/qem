@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Tilt } from 'react-tilt';
 import { gsap } from 'gsap';
